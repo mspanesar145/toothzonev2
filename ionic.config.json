@@ -1,0 +1,7 @@
+{
+  "name": "toothzone4",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
