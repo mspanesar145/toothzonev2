@@ -234,3 +234,32 @@
     --ion-card-background: #1e1e1e;
   }
 }
+
+
+@font-face {
+  font-family: 'Poppins-Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../assets/fonts/Poppins/Poppins-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins-Light';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../assets/fonts/Poppins/Poppins-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins-Medium';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../assets/fonts/Poppins/Poppins-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins-Bold';
+  font-style: normal;
+  font-weight: bold;
+  src: url('../assets/fonts/Poppins/Poppins-Bold.ttf');
+}

@@ -1,0 +1,160 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button class="nav-bar-btns" (click)="homeButtonPressed()">
+              <ion-icon name="home-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-label class="ion-text-end header-title">Welcome {{loggedInUser.name}}</ion-label>
+    </ion-toolbar>
+  </ion-header>
+<ion-content class="main-content">
+  <form #form="ngForm" [formGroup]="validations_form" (ngSubmit)="registerPatient(form)" >
+      <ion-grid>
+          <ion-row>
+              <ion-col style="height: 20px;"></ion-col>
+          </ion-row>
+            <ion-row justify-content-center>
+              <ion-col>
+                <div ion-text-center>
+                  <h3 class="ion-text-center tag-h3 white-color auth-title-text">{{screenTitle}}</h3>
+                </div>
+              </ion-col>
+             
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                  <ion-button class="btn-label-color rounded-button action-btn" style="--background:#0073A3;width: 85px;height: 30px;" expand="small" (click)="backButtonPressed()">BACK</ion-button>
+              </ion-col>
+            </ion-row>
+              <ion-row>
+                  <ion-col>
+                      <ion-item class="input-border">
+                          <ion-input id="fullname" formControlName="name" name="name" type="text" placeholder="Name" class="white-color textfielf-text"> </ion-input>
+                          <ion-icon name="person-outline" class="white-color"></ion-icon>
+                        </ion-item>
+                  </ion-col>
+              </ion-row>
+              <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.required">
+                
+              </span>
+  
+              <ion-row>   
+                <ion-col>
+                    <ion-item class="input-border">
+                        <ion-input id="phone" formControlName="phone_number" name="phone_number" type="number" placeholder="Phone Number" class="white-color textfielf-text"></ion-input>
+                        <ion-icon name="call-outline" class="white-color" style="transform: rotate(270deg);"></ion-icon>
+                      </ion-item>
+                </ion-col>
+              </ion-row>
+              <span class="error ion-padding" *ngIf="isSubmitted && errorControl.phone_number.errors?.required">
+                
+              </span>
+  
+
+              <ion-row>   
+                  <ion-col>
+                      <ion-radio-group id="gender" value="Male" formControlName="gender" name="gender">      
+
+                            <div class="gender-item-container">
+                                <ion-radio [color]="myClass" slot="start" value="Male"></ion-radio>
+                                <ion-label class="white-color">Male</ion-label>    
+                            </div>
+                      
+                            <div class="gender-item-container">
+                                <ion-radio style="color:white" slot="start" value="Female"></ion-radio>
+                                <ion-label class="white-color">Female</ion-label>    
+                            </div>
+                        </ion-radio-group>
+                      
+                  </ion-col>
+  
+                </ion-row>
+                <span class="error ion-padding" *ngIf="isSubmitted && errorControl.gender.errors?.required">
+                    
+                  </span>
+  
+              <ion-row>   
+              <ion-col>
+                  <ion-item class="input-border">
+                      <ion-label class="dob-placeholder">Date of birth</ion-label>
+                      <ion-datetime id="dob" style="width: 100%;" (ionChange)="datechange()" class="white-color" formControlName="date_of_birth" name="date_of_birth"></ion-datetime>
+                      <ion-icon name="calendar-outline" class="white-color"></ion-icon> 
+                   </ion-item>
+              </ion-col>
+            </ion-row>
+            <span class="error ion-padding" *ngIf="isSubmitted && errorControl.date_of_birth.errors?.required">
+              
+            </span>
+            <ion-row>   
+              <ion-col>
+                  <ion-item class="input-border">
+                      <ion-input id="address" formControlName="address" name="address" type="text" placeholder="Address" class="white-color textfielf-text"> </ion-input>
+                      <ion-icon name="location-outline" class="white-color"></ion-icon>
+                    </ion-item>
+              </ion-col>
+          </ion-row>
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.address.errors?.required">
+            
+          </span>
+          <ion-row>   
+              <ion-col>
+                  <ion-item class="input-border">
+                      <ion-select id="state" formControlName="state" name="state" type="text" placeholder="State" class="white-color textfielf-text" style="width: 100%;"> 
+                          <ion-select-option value="">Select State</ion-select-option>
+                          <ion-select-option value="South Australia">South Australia</ion-select-option>
+                          <ion-select-option value="Australian Capital Territory">Australian Capital Territory</ion-select-option>
+                          <ion-select-option value="New South Wales">New South Wales</ion-select-option>
+                          <ion-select-option value="Northern Territory">Northern Territory</ion-select-option>
+                          <ion-select-option value="Queensland">Queensland</ion-select-option>
+                          <ion-select-option value="Tasmania">Tasmania</ion-select-option>
+                          <ion-select-option value="Victoria">Victoria</ion-select-option>
+                          <ion-select-option value="Western Australia">Western Australia</ion-select-option>
+                      </ion-select>
+                    </ion-item>
+              </ion-col>
+          </ion-row>
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.state.errors?.required">
+            
+          </span>
+          <!--ion-row>
+            <ion-col>
+                <ion-item class="input-border">
+                  <ion-select name="state" placeholder="Select" [placeholder]="selectedState.name" [(ngModel)]="selectedState.id">
+                    
+                      <ion-select-option *ngFor="let item of states" value="{{item.id}}" [attr.selected]="item.id == selectedState.id">{{item.name}}</ion-select-option>
+
+                    </ion-select>
+                  </ion-item>
+            </ion-col>
+          </ion-row-->
+
+          <ion-row>   
+            <ion-col>
+                <ion-item class="input-border">
+                    <ion-input id="postCode" formControlName="post_code" name="post_code" type="number" placeholder="Post Code" class="white-color textfielf-text"> </ion-input>
+                    <ion-icon name="ellipsis-horizontal-outline" class="white-color"></ion-icon>
+                  </ion-item>
+            </ion-col>
+        </ion-row>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.post_code.errors?.required">
+          
+        </span>
+
+        <ion-row>
+          <ion-col>
+              <ion-button class="btn-label-color rounded-button action-btn" style="--background:#0073A3" expand="block" type="submit">SUBMIT</ion-button>
+          </ion-col>
+        </ion-row>
+                
+        
+       
+        <ion-row style="height:20px;">
+            <ion-col style="text-align:center;">
+                <label class="action-label-text"></label>
+            </ion-col>
+          </ion-row>   
+  
+    </ion-grid>
+</form>
+</ion-content>

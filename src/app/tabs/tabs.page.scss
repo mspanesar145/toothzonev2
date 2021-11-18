@@ -1,1 +1,32 @@
+.tab-selected{
+    --background: #137B75;
+    --color: white;
+    color: white;
+}
 
+ion-tab-button {
+    --background: #137B75;
+    --color: white;
+}
+
+ion-tab-bar ion-label {
+    font-size: 10px;
+    font-family: 'Poppins-Regular';
+}
+
+ion-tab-button a:hover {
+    color: white !important;
+}
+
+ion-tabs {
+    //not selected custom image
+    ion-tab-button.custom-profile > ion-icon {
+        background-image: url(https://blog.photofeeler.com/wp-content/uploads/2017/09/instagram-profile-picture-maker.jpg);
+    }
+}
+
+.service-tab {
+    background-image: url(/assets/service_tab_icon.png);
+    background-size: cover;
+}
+  

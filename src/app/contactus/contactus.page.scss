@@ -1,0 +1,55 @@
+.nav-bar-btns {
+    --color: white;
+}
+
+.icon-theme-bg {
+    background: #137B75;
+    height: 30px;
+    width: 30px;
+    color: white;
+    border-radius: 30px;
+    display: block;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.icon-theme-bg ion-icon {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+.heading {
+    font-family: 'Poppins-Bold';
+    font-size: 18px;
+}
+
+.sub-heading {
+    font-family: 'Poppins-Medium';
+    font-size: 16px;
+    color: #0F0909;
+}
+
+.parah-text {
+    font-family: 'Poppins-Light';
+    font-size: 14px;
+    color: #0F0909;
+    line-height: 1.2;
+} 
+
+ion-toolbar {
+    --background: #137B75;
+    --color: white;
+}
+
+ion-toolbar ion-title {
+
+    font-size: 16px;
+}
+

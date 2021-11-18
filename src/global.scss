@@ -24,3 +24,116 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.color-white {
+    color: white;
+}
+.action-btn {
+    height: 56px;
+    font-family: 'Poppins-Bold' !important;
+}
+
+.textfielf-text {
+    font-size: 15px !important;
+    font-family: 'Poppins-Light' !important;
+    height: 56px;
+    color: white;
+}
+
+.textarea-text {
+    font-size: 15px !important;
+    font-family: 'Poppins-Light' !important;
+    color: white;
+}
+
+
+.auth-title-text {
+    font-size: 22px !important;
+    color: #0074A3;
+    font-family: "Poppins-Regular" !important;
+}
+
+.page-title-text {
+    font-size: 16px !important;
+    color: #0f0909;
+    font-family: "Poppins-Medium" !important;
+}
+
+.action-label-text {
+    font-size: 16px !important;
+    color: white;
+    font-family: "Poppins-Light" !important;
+}
+
+
+
+.rounded-button {
+    --border-radius: 30px !important;
+}
+
+//CSS for Home and Profile
+.book-apt-label{
+    font-size: 16px !important;
+    color: #0F0909 !important;
+    font-family: 'Poppins-Bold' !important;
+}
+
+.notification-label {
+    font-size: 16px !important;
+    color:white !important;
+    font-family: 'Poppins-Bold' !important;
+    margin-left: 10px !important;
+    margin-top: 10px !important;
+}
+.notification-sublabel {
+    font-size: 14px !important;
+    color:white !important;
+    font-family: 'Poppins-Bold' !important;
+}
+
+.notification-month {
+    font-size: 12px !important;
+    color:white !important;
+    font-family: 'Poppins-Bold' !important;
+    opacity: 0.8;
+    text-align: left;
+    padding: 0px 0px 10px 0px;
+}
+
+.book-apt-sublabel {
+    font-size: 12px !important;
+    color: #0F0909 !important;
+    font-family: 'Poppins-Regular' !important;
+}
+
+.book-appointment-calendar-block {
+    width: 45px;
+    background: #137B75;
+    padding: 6px;
+    position: absolute;
+    margin: auto;
+    top: 3px;
+    left: 10px;
+    border-radius: 5px;
+}
+
+.book-appointment-container {
+    margin: 10px;
+    box-shadow: rgb(0 0 0 / 12%) 3px 3px 16px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+.header-title {
+    font-size: 16px !important;
+    font-family: 'Poppins-Regular';
+    color: white;
+    float: right;
+    margin-right:10px;
+}
+
+ion-tab-button {
+    --color-selected: var(--ion-color-primary-contrast);
+  }
+  

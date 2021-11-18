@@ -1,0 +1,168 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button class="nav-bar-btns">
+              <ion-icon name="home-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-label class="ion-text-end header-title">Welcome {{loggedInUser.name}}</ion-label>
+        <ion-buttons slot="end" style="display: none;">
+            <ion-button class="nav-bar-btns">
+                <ion-icon name="chevron-down-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>  
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+      <div class="book-appointment-container">
+          <ion-row>
+            <ion-col size="2">
+                <div class="book-appointment-calendar-block">
+                    <img src="assets/book-appointment-calendar.png">
+                </div>  
+            </ion-col>
+            <ion-col size="10">
+                <ion-label>
+                    <h3 class="book-apt-label">Book Your Appointment Now</h3>
+                    <p class="book-apt-sublabel" (click)="presentBookingActionSheet()" >Click Here to Book</p>
+                    </ion-label>      
+            </ion-col>
+  
+          </ion-row>
+        </div>
+        <ion-slides pager style="height: 200px; margin-top: -10px;">
+  
+            <ion-slide *ngFor="let promotion of promotions">
+              <div class="slide">
+                <ion-img [src]="promotion.image_url"></ion-img>
+              </div>
+            </ion-slide>
+        
+          </ion-slides>
+      
+        <div class="book-appointment-container">
+            <ion-row>
+              <ion-col size="2">
+                  <div class="user-profile-block">
+                      <img [src]="quotation.image_url">
+                  </div>  
+              </ion-col>
+              <ion-col size="10">
+                  <ion-label>
+                      <h3 class="book-apt-label">{{quotation.title}}</h3>
+                      <p class="book-apt-sublabel">{{quotation.description}}</p>
+                    </ion-label>      
+              </ion-col>
+    
+            </ion-row>
+          </div>
+      
+      
+      <!-- ion-card>
+          <ion-item>
+            <ion-avatar slot="start">
+              <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+            </ion-avatar>
+            <ion-label>
+              <h3>Item Avatar</h3>
+              <p>Ha ha ha</p></ion-label>
+          </ion-item> 
+      </ion-card> -->
+      <ion-row *ngFor="let appointmentItem of appointments">
+        <ion-col>
+          <ion-card class="appointments">
+              <ion-row style="height:100%;">
+                  <ion-col size="2" style="background: white;height: 65px;margin-left: 10px;margin-top: 10px;border-radius: 5px;">
+                      <ion-datetime class="apt-month" displayFormat="MMM" disabled [(ngModel)]="appointmentItem.iondate">
+                      </ion-datetime>
+
+                      <ion-datetime class="apt-day" displayFormat="DD" disabled [(ngModel)]="appointmentItem.iondate">
+                        </ion-datetime>
+                  </ion-col>
+                  <ion-col>
+                      <ion-label class="appointment-name">You need to see the doctor on {{appointmentItem.appointment_date}}</ion-label>
+                  </ion-col>
+                  <ion-col size="3.5">
+                      <ion-button class="book-now-btn" (click)="bookAppointmentPressed()">Book Now</ion-button>
+                  </ion-col>
+              </ion-row>
+              
+          </ion-card>
+        </ion-col>
+      </ion-row>
+
+
+  
+      <ion-row style="margin: 5px;" *ngFor="let birthDayItem of birthDays">
+          <ion-col>
+                  <img class="card-img" src="assets/birthday-banner.png"/>
+          </ion-col>
+      </ion-row>
+    
+      <ion-row *ngIf="usernotifications && usernotifications.length > 0">
+            <ion-col>
+                <ion-card class="notifications">
+                    <ion-label>
+                            <h3 class="notification-label">Notifications</h3>
+                    </ion-label>
+                    <ion-row style="margin: 5px;" *ngFor="let usernotificationItem of usernotifications; let idx = index;">
+                        <ion-col>
+                                <p class="notification-sublabel">{{usernotificationItem.notification_message}}</p>
+                                <ion-datetime class="notification-month" displayFormat="DD MMMM YYYY" disabled [(ngModel)]="usernotificationItem.iondate">
+                                    </ion-datetime>
+                                <div *ngIf="idx != (usernotifications.length-1)" style="border-bottom: 1px solid #fff;height:1px; display: block;">
+                        </div>
+                    </ion-col>
+                </ion-row>
+                    
+                </ion-card>
+            </ion-col>
+      </ion-row>
+  
+      <ion-row style="margin: 5px;">
+          <ion-col>
+                  <img class="card-img" src="assets/contact-us-banner.png" (click)="contactUsClicked()" />
+          </ion-col>
+      </ion-row>
+    
+      <ion-row style="margin: 5px;" >
+          <ion-col>
+                  <img class="card-img"  src="assets/submit-query-banner.png" (click)="submitQueryClicked()"/>
+        </ion-col>
+    </ion-row>
+  
+    <ion-row style="margin: 5px;" >
+        <ion-col>
+            <h3 class="image-titles page-title-text">Preferred Providers for:</h3>
+        </ion-col>
+    </ion-row>
+
+    <ion-row *ngFor="let provider of providers">
+        <ion-col *ngFor="let subProvider of provider">
+            <img src="{{subProvider.image_url}}"/>
+        </ion-col>
+    </ion-row>
+    
+    <ion-row style="margin: 5px;" >
+        <ion-col>
+            <h3 class="image-titles page-title-text">Health Fund Partners with Smile Membership</h3>
+        </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let fundPartner of fundPartments">
+        <ion-col *ngFor="let fundPartnerItem of fundPartner">
+            <img src="{{fundPartnerItem.image_url}}"/>
+        </ion-col>
+    </ion-row>
+    <ion-row style="margin: 5px;" >
+        <ion-col>
+            <h3 class="image-titles page-title-text">We accept all major Health Funds</h3>
+        </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let fund of funds">
+        <ion-col *ngFor="let fundItem of fund">
+            <img src="{{fundItem.image_url}}"/>
+        </ion-col>
+    </ion-row>
+  </ion-content>
+  

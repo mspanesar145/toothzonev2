@@ -1,0 +1,120 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button class="nav-bar-btns" (click)="homeButtonPressed()">
+              <ion-icon name="home-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-label class="ion-text-end header-title">Welcome {{loggedInUser.name}}</ion-label>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+    <ion-grid>
+      
+        <ion-row justify-content-center>
+            <ion-col>
+              <div ion-text-center>
+                <h3 class="ion-text-center tag-h3 page-title-text">OUR SERVICES</h3>
+              </div>
+            </ion-col>
+          </ion-row>
+
+
+          <div *ngFor="let dentalServicelist of dentalServiceMap">
+                <ion-row *ngIf="dentalServicelist.length > 1">
+                    <ion-col *ngFor="let dentalService of dentalServicelist">
+                        <ion-card class="dentist-cards">
+                            <img class="serivce-icon" src="{{dentalService.image}}"/>
+                        </ion-card>
+                        <ion-label class="dentist-cards-label">{{dentalService.title}}</ion-label>
+                    </ion-col>
+                </ion-row>    
+                <ion-row *ngIf="dentalServicelist.length == 1">
+                        <ion-col></ion-col>
+                        <ion-col *ngFor="let dentalService of dentalServicelist">
+                            <ion-card class="dentist-cards" style="width:101px;">
+                                <img class="serivce-icon" src="{{dentalService.image}}"/>
+                            </ion-card>
+                            <ion-label class="dentist-cards-label">{{dentalService.title}}</ion-label>
+                        </ion-col>
+                        <ion-col></ion-col>
+
+                    </ion-row>    
+          </div>
+    
+
+      <!-- <ion-row>
+        <ion-col>
+          <ion-card class="dentist-cards">
+              <img class="serivce-icon" src="assets/fluorescence.png"/>
+          </ion-card>
+          <ion-label class="dentist-cards-label">Fluorescenece Dental Imaging</ion-label>
+        </ion-col>
+        <ion-col>
+            <ion-card class="dentist-cards">
+                <img class="serivce-icon" src="assets/healthy-tooth.png"/>
+            </ion-card>
+              <ion-label class="dentist-cards-label">Philips Zoom Whitening</ion-label>
+
+          </ion-col>
+        <ion-col>
+            <ion-card class="dentist-cards">
+                <img class="serivce-icon" src="assets/dental-implant.png"/>
+            </ion-card>
+            <ion-label class="dentist-cards-label">Digital Key Hole Dental Implants</ion-label>
+
+          </ion-col>
+      </ion-row>
+
+
+      <ion-row>
+          <ion-col>
+              <ion-card class="dentist-cards">
+                  <img class="serivce-icon" src="assets/dentistry.png"/>
+              </ion-card>
+              <ion-label class="dentist-cards-label">General Dentistry</ion-label>
+
+          </ion-col>
+          <ion-col>
+              <ion-card class="dentist-cards">
+                  <img class="serivce-icon" src="assets/tooth.png"/>
+              </ion-card>
+              <ion-label class="dentist-cards-label">Specialized Gum Treatment And RCT</ion-label>
+
+            </ion-col>
+          <ion-col>
+              <ion-card class="dentist-cards">
+                  <img class="serivce-icon" src="assets/teeth.png"/>
+              </ion-card>
+              <ion-label class="dentist-cards-label">Cosmetic & Missing Teeth Replacement</ion-label>
+
+            </ion-col>
+        </ion-row>
+
+        
+        <ion-row>
+            <ion-col>
+            </ion-col>
+            <ion-col>
+                <ion-card class="dentist-cards" style="width:101px;">
+                    <img class="serivce-icon" src="assets/braces.png"/>
+                </ion-card>
+                <ion-label class="dentist-cards-label">Invisalign Go</ion-label>
+            </ion-col>
+            <ion-col>
+            </ion-col>
+        </ion-row>  -->
+
+        <ion-row>
+            <ion-col>
+                <ion-button class="btn-bg-color rounded-button action-btn" style="--color:#FFFFFF" expand="block" type="submit" (click)="bookAppointmentPressed()">Book Your Appointment Now</ion-button>
+            </ion-col>
+          </ion-row>
+            
+    </ion-grid>
+      
+
+</ion-content>

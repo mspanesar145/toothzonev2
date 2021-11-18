@@ -8,27 +8,47 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        path: 'home',
+        loadChildren: () => import('../home/home.module').then(m => m.HomePageModule)
       },
       {
-        path: 'tab2',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        path: 'profile',
+        loadChildren: () => import('../profile/profile.module').then(m => m.ProfilePageModule)
       },
       {
-        path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+        path: 'services',
+        loadChildren: () => import('../services/services.module').then(m => m.ServicesPageModule)
+      },
+      {
+        path: 'submit-query',
+        loadChildren: () => import('../submit-query/submit-query.module').then(m => m.SubmitQueryPageModule)
+      },
+      {
+        path: 'contactus',
+        loadChildren: () => import('../contactus/contactus.module').then(m => m.ContactusPageModule)
+      },
+      {
+        path: 'addprofile',
+        loadChildren: () => import('../addprofile/addprofile.module').then(m => m.AddprofilePageModule)
+      },
+      {
+        path: 'logout',
+        loadChildren: () => import('../logout/logout.module').then(m => m.LogoutPageModule)
+      },
+      {
+        path: 'bookappointment',
+        loadChildren: () => import('../bookappointment/bookappointment.module').then( m => m.BookappointmentPageModule)
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/home',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/home',
     pathMatch: 'full'
   }
 ];

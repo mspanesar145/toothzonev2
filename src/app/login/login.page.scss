@@ -1,0 +1,104 @@
+
+ion-item{--background: transparent; --border-width:0px !important;}
+
+ion-input {
+    
+    margin-left: 10px; 
+    margin-right: 10px;
+    width: 90%;
+    border-bottom: 0px !important;
+    /* font-family: 'Roboto-Thin'; */
+    font-size: 16px;
+}
+
+.screen-background {
+  background: url('../../assets/background.png') no-repeat 0 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  background-size: 100%;  
+}
+
+.input-border {
+    border-radius: 30px;
+    border: 1px solid #ffffff;
+}
+
+h3, h5, ion-anchor {
+    color : #ffffff;
+}
+
+.login-frm {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    height: 600px;
+}
+
+.login-fields {
+  border-bottom: 0px;
+}
+.forgot-row ion-col {
+    justify-content: left;
+    margin-left:10px;
+    margin-top: 25px;
+}
+.tag-h3 {
+    margin-top:5px;
+
+}
+h5 {
+    font-size: 16px;
+    font-family: 'Poppins-Regular';
+    margin-bottom: 0px !important;
+
+  }
+
+
+  h3 {
+    font-family: 'Poppins-Medium';  
+    font-size: 18px;
+  }
+
+ion-button {
+  font-size: 16px;
+  font-family: 'Poppins-Light';
+}  
+  ion-content {
+    --ion-background-color: #E4E4E4;
+  }
+
+  .black-color{
+      color: black;
+  }
+
+  .white-color{
+    color: white;
+}
+
+
+  .logo-container {
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .logo-container img {
+    position: absolute;
+    width: 130px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+  }
+
+  .btn-label-color {
+    color: #0073A3;
+  }

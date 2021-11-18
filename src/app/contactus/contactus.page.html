@@ -1,0 +1,147 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button class="nav-bar-btns" (click)="homeButtonPressed()">
+              <ion-icon name="home-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-label class="ion-text-end header-title">Welcome {{loggedInUser.name}}</ion-label>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row>
+          <ion-col style="text-align: center;"><ion-label class="ion-text-center tag-h3 page-title-text">CONTACT US</ion-label></ion-col>
+        </ion-row>
+        <ion-row *ngFor="let contactus of contactusList; let i = index">
+        <ion-row style="height:155px;width: 100%;">
+          <ion-col>
+                <iframe *ngIf="i == 0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3265.288687497771!2d138.58940411540436!3d-35.07451899006768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ab0d7239dbd8a37%3A0x26e30ff9926c9f90!2s5%20The%20Mall%2C%20Aberfoyle%20Park%20SA%205159%2C%20Australia!5e0!3m2!1sen!2sin!4v1619854799842!5m2!1sen!2sin" width="100%" height="140" style="border:0;" allowfullscreen="" loading="lazy"></iframe>         
+                <iframe *ngIf="i == 1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3267.6511980275545!2d138.614836415403!3d-35.015435586905824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ab0d1c06f96c657%3A0x674242c69c71cade!2sUnit%201%2F186%20Main%20Rd%2C%20Blackwood%20SA%205051%2C%20Australia!5e0!3m2!1sen!2sin!4v1619857057034!5m2!1sen!2sin" width="100%" height="140" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+            </ion-col>
+        </ion-row>
+        <ion-row style="width: 100%;">
+            <ion-col>
+                <ion-label class="sub-heading">{{contactus.address}}</ion-label>
+            </ion-col>
+          </ion-row>
+          <ion-row style="width: 100%; margin-top: 20px;">
+                      <ion-col size="1" style="margin-left: 14px;">
+                              <div class="icon-theme-bg">
+                                  <ion-icon name="location-outline"></ion-icon>    
+                              </div>
+                      </ion-col>
+                      <ion-col  size="10">
+                          <ion-label>
+                              <p class="parah-text" style="margin-left: 5px;">{{contactus.street_address}}</p>
+                            </ion-label>      
+                      </ion-col>
+            </ion-row>
+            <ion-row style="width: 100%; margin-top: 20px;">
+                                <ion-col size="1" style="margin-left: 14px;">
+                                  <div class="icon-theme-bg">
+                                      <ion-icon name="call-outline"></ion-icon>
+                                  </div>
+                                </ion-col>
+                                <ion-col  size="10">
+                                    <ion-label>
+                                        <p class="parah-text" (click)="phoneNumberPressed(contactus.phone_no1)" style="margin-left: 5px;"><a>{{contactus.phone_no1.split(";")[0]}}</a> ; <a>{{contactus.phone_no1.split(";")[1]}}</a></p>
+                                        <p class="parah-text" (click)="phoneNumberPressed(contactus.phone_no2)" style="margin-left: 5px;"><a>{{contactus.phone_no2}}</a></p>
+                                    </ion-label>      
+                                </ion-col>
+            </ion-row>
+            <ion-row style="width: 100%; margin-top: 10px;">
+                        <ion-col size="1" style="margin-left: 14px;">
+                                <div class="icon-theme-bg">
+                                    <ion-icon name="mail-outline"></ion-icon>                               
+                            </div>
+                        </ion-col>
+                        <ion-col  size="10" (click)="emailClicked(contactus.email_address)" >
+                                <p class="parah-text" style="margin-left: 5px;"><a>{{contactus.email_address}}</a></p>
+                        </ion-col>
+              </ion-row>  
+              <ion-row style="width: 100%;">
+                    <ion-col size="1" style="margin-left: 14px;">
+                            <div class="icon-theme-bg">
+                              <ion-icon name="globe-outline"></ion-icon>                                 
+                          </div>
+                  </ion-col>
+                  <ion-col  size="10">
+                          <p class="parah-text" style="margin-left: 5px;" (click)="websiteLinkClicked(contactus.website)"><a>{{contactus.website}}</a></p>
+                  </ion-col>
+              </ion-row>  
+              
+            </ion-row>
+
+            <!----  2nd LOCATION  ---->
+            <!-- <ion-row style="height:155px;">
+                  <ion-col>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3267.6511980275545!2d138.614836415403!3d-35.015435586905824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ab0d1c06f96c657%3A0x674242c69c71cade!2sUnit%201%2F186%20Main%20Rd%2C%20Blackwood%20SA%205051%2C%20Australia!5e0!3m2!1sen!2sin!4v1619857057034!5m2!1sen!2sin" width="100%" height="140" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <ion-label class="sub-heading">Tooth Zone Blackwood</ion-label>
+                    </ion-col>
+                  </ion-row>
+
+
+                  <ion-row>
+                      <ion-col size="6">
+                          <ion-row>
+                              <ion-col size="3">
+                                  <div class="icon-theme-bg">
+                                      <ion-icon name="location-outline"></ion-icon>    
+                                  </div>
+                              </ion-col>
+                              <ion-col  size="9">
+                                  <ion-label>
+                                      <p class="parah-text">1/186 Main Road</p>
+                                      <p class="parah-text">Blackwood, SA - 5051</p>
+                                          </ion-label>      
+                              </ion-col>
+                          </ion-row>
+                      </ion-col>
+        
+                      <ion-col size="6">
+                          <ion-row>
+                              <ion-col size="3">
+                                  <div class="icon-theme-bg">
+                                      <ion-icon name="call-outline"></ion-icon>
+                                  </div>
+                                </ion-col>
+                                <ion-col  size="9">
+                                  <ion-label>
+                                      <p class="parah-text">08 8178 1190</p>
+                                      <p class="parah-text">0406 833 537</p>
+                                        </ion-label>      
+                              </ion-col>
+                          </ion-row>
+                        </ion-col>        
+                    </ion-row>
+
+                    <ion-row>
+                            <ion-col size="1" style="margin-left: 14px;">
+                                    <div class="icon-theme-bg">
+                                        <ion-icon name="mail-outline"></ion-icon>                               
+                                </div>
+                            </ion-col>
+                                      <ion-col  size="10">
+                                        <p class="parah-text" style="margin-left: 5px;">reception.blackwood@toothzone.com.au</p>
+                                </ion-col>
+                      </ion-row> 
+
+                    <ion-row>
+                            <ion-col size="1" style="margin-left: 14px;">
+                                    <div class="icon-theme-bg">
+                                        <ion-icon name="globe-outline"></ion-icon>                                 
+                                    </div>
+                                  </ion-col>
+                                            <ion-col  size="10">
+                                        <p class="parah-text" style="margin-left: 5px;">wwww.toothzone.com.au</p>
+                                </ion-col>
+                      </ion-row>    -->      
+    </ion-grid>
+</ion-content>

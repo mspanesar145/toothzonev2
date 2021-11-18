@@ -1,0 +1,33 @@
+.tab-selected{
+    --color: white;
+}
+
+
+.nav-bar-btns {
+    --color: white;
+}
+
+.card-img {
+    box-shadow: rgb(0 0 0 / 12%) 0px 4px 16px;
+}
+
+ion-toolbar {
+    --background: #137B75;
+    --color: white;
+}
+
+ion-toolbar ion-title {
+
+    font-size: 16px;
+}
+
+ion-card-header {
+    border-bottom: 1px solid white;
+}
+ion-card-content {
+    padding-bottom: 0px;
+}
+
+span {
+    font-size: 12px;
+}

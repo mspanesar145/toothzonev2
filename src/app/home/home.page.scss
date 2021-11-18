@@ -1,0 +1,75 @@
+.margin-5 {
+    margin: 5px;
+}
+
+.tab-selected{
+    --color: white;
+}
+
+.nav-bar-btns {
+    --color: white;
+}
+
+.card-img {
+    box-shadow: rgb(0 0 0 / 12%) 0px 4px 16px;
+}
+
+.book-now-btn {
+    --background: #8F54F7;
+    margin-top: 18px;
+    font-family: "Poppins-Bold" !important;
+    text-transform: capitalize;
+    font-size: 12px;
+    width: 95%;
+    height: 30px;
+}
+.appointment-name {
+    font-size: 16px;
+    color: black;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-family: "Poppins-Medium" !important;
+    position: absolute;
+}
+
+.image-titles {
+    font-size: 16px;
+    color: black;
+    font-family: "Poppins-Bold" !important;
+}
+
+ion-datetime.apt-month {
+    padding: 0px;
+    text-align: center;
+    font-size: 18px;
+    font-family: "Poppins-Regular" !important;
+    color: black;
+    opacity: 0.8;
+}
+
+ion-datetime.apt-day {
+    padding: 0px;
+    text-align: center;
+    font-size: 22px;
+    font-family: "Poppins-Bold" !important;
+    color: #525050;
+    opacity: 1;
+}
+ion-toolbar {
+    --background: #137B75;
+    --color: white;
+}
+
+ion-toolbar ion-title {
+
+    font-size: 16px;
+}
+
+ion-card.appointments {
+    --background: #C19EF9;
+    height: 85px;
+}
+
+ion-card.notifications {
+    --background: #137B75;
+}
